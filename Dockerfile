@@ -10,4 +10,4 @@ RUN apt-get update && \
 
 COPY ./dump.sh /
 
-CMD ["./dump.sh"] 
+CMD ["sudo ./dump.sh"] 
