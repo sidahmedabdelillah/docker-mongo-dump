@@ -14,6 +14,8 @@ echo "Job Dump started: $(date)"
 DATE=$(date +%Y%m%d_%H%M%S)
 FILE="/backup/$MONGO_BACKUP_FILENAME-$DATE.tar.gz"
 OUTPUT="dump/"
+URI="mongodb://$DB_HOST:27017"
+echo $URI
 
-mongodump --host $DB_HOST:27017 -- -u $DB_USER -p $DB_PWD --authenticationDatabase admin  --archive=$FILE --gzip -d DB_NAME 
+mongodump --host=$DB_HOST  --port=27017 -u $DB_USER -p $DB_PWD --authenticationDatabase admin  --archive=$FILE --gzip -d DB_NAME 
 echo "Job Dump finished: $(date)"
