@@ -12,4 +12,4 @@ COPY ./dump.sh /
 
 RUN sed -i 's/\r$//' /dump.sh && chmod +x /dump.sh
 
-CMD ["sudo ./dump.sh"] 
+CMD ["./dump.sh"] 
